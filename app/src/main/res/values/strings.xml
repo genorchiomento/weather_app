@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">WeatherApp</string>
+  <string name="hint_search_city_input">Como está o clima em…</string>
+  <string name="label_btn_search">Ver clima</string>
+  <string name="text_temperature">%1.0fºC</string>
+  <string name="text_humidity">%1d%%</string>
+  <string name="text_feels_like">%1.0fºC</string>
+  <string name="text_speed_wind">%1.0fm/s</string>
+  <string name="content_description_icon_weather_time">Icon weather time</string>
+</resources>

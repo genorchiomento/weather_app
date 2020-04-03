@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorPrimary"
+  android:orientation="vertical"
+  android:padding="@dimen/component_interface_square_16"
+  tools:context=".MainActivity">
+
+  <EditText
+    android:id="@+id/editTextCityInput"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="15"
+    android:hint="@string/hint_search_city_input"
+    android:importantForAutofill="no"
+    android:inputType="textCapCharacters"
+    android:textAllCaps="true"
+    android:textColor="@color/colorText"
+    android:textColorHint="@color/colorText"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/btnSearch"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/component_interface_square_16"
+    android:background="@drawable/button_circle"
+    android:text="@string/label_btn_search"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/editTextCityInput" />
+
+  <include
+    layout="@layout/result_weather_search"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/component_interface_stack_36"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
