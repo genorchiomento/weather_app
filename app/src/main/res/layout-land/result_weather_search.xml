@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorPrimary">
+
+  <TextView
+    android:id="@+id/cityResponseTextView"
+    style="@style/AppTheme.DayTheme.Title"
+    android:textSize="@dimen/component_interface_title"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="São Paulo" />
+
+  <ImageView
+    android:id="@+id/iconWeatherImageView"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_margin="@dimen/component_interface_square_16"
+    android:layout_marginTop="@dimen/component_interface_stack_36"
+    android:contentDescription="@string/content_description_icon_weather_time"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/cityResponseTextView"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cityResponseTextView"
+    app:layout_constraintVertical_bias="0.0"
+    tools:src="@drawable/ic_thermometer_sun" />
+
+  <TextView
+    android:id="@+id/weatherResponseTextView"
+    style="@style/AppTheme.DayTheme.Subtitle"
+    app:layout_constraintEnd_toEndOf="@+id/tempResponseTextView"
+    app:layout_constraintStart_toStartOf="@+id/tempResponseTextView"
+    app:layout_constraintTop_toBottomOf="@+id/tempResponseTextView"
+    tools:text="Nublado" />
+
+  <TextView
+    android:id="@+id/tempResponseTextView"
+    style="@style/AppTheme.DayTheme.FontStyle"
+    android:layout_marginTop="@dimen/component_interface_stack_36"
+    android:layout_marginEnd="@dimen/component_interface_inline_36"
+    android:textSize="32sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/cityResponseTextView"
+    app:layout_constraintTop_toBottomOf="@+id/cityResponseTextView"
+    app:layout_constraintVertical_bias="0.0"
+    tools:text="8ºC" />
+
+  <TextView
+    android:id="@+id/humidityResponseTextView"
+    style="@style/AppTheme.DayTheme.FontStyle"
+    app:layout_constraintEnd_toStartOf="@+id/feelsLikeResponseTextView"
+    app:layout_constraintStart_toStartOf="@+id/iconWeatherImageView"
+    app:layout_constraintTop_toTopOf="@+id/feelsLikeResponseTextView"
+    tools:text="77%" />
+
+  <TextView
+    android:id="@+id/feelsLikeResponseTextView"
+    style="@style/AppTheme.DayTheme.FontStyle"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/windSpeedResponseTextView"
+    app:layout_constraintStart_toEndOf="@+id/humidityResponseTextView"
+    app:layout_constraintTop_toBottomOf="@+id/weatherResponseTextView"
+    tools:text="10ºC" />
+
+  <TextView
+    android:id="@+id/windSpeedResponseTextView"
+    style="@style/AppTheme.DayTheme.FontStyle"
+    app:layout_constraintEnd_toEndOf="@+id/weatherResponseTextView"
+    app:layout_constraintStart_toEndOf="@+id/feelsLikeResponseTextView"
+    app:layout_constraintTop_toTopOf="@+id/feelsLikeResponseTextView"
+    tools:text="4m/s" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
