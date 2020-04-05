@@ -1,4 +1,4 @@
-package br.com.fatcatdevstudio.weatherapp
+package br.com.fatcatdevstudio.weatherapp.repository
 
 import br.com.fatcatdevstudio.weatherapp.model.OpenWeatherResponse
 import retrofit2.Call
