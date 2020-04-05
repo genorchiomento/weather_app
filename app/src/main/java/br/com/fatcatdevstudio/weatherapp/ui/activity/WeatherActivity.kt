@@ -1,9 +1,10 @@
-package br.com.fatcatdevstudio.weatherapp
+package br.com.fatcatdevstudio.weatherapp.ui.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import br.com.fatcatdevstudio.weatherapp.Constants.Companion.API_KEY
 import br.com.fatcatdevstudio.weatherapp.Constants.Companion.BASE_URL
 import br.com.fatcatdevstudio.weatherapp.Constants.Companion.CITY_SAVE_INSTANCE
@@ -14,8 +15,11 @@ import br.com.fatcatdevstudio.weatherapp.Constants.Companion.ICON_WEATHER_SAVE_I
 import br.com.fatcatdevstudio.weatherapp.Constants.Companion.TEMP_SAVE_INSTANCE
 import br.com.fatcatdevstudio.weatherapp.Constants.Companion.WEATHER_DESCRIPTION_SAVE_INSTANCE
 import br.com.fatcatdevstudio.weatherapp.Constants.Companion.WIND_SPEED_SAVE_INSTANCE
+import br.com.fatcatdevstudio.weatherapp.R
 import br.com.fatcatdevstudio.weatherapp.Utils.Companion.hideSoftKeyBoard
 import br.com.fatcatdevstudio.weatherapp.model.OpenWeatherResponse
+import br.com.fatcatdevstudio.weatherapp.repository.OpenWeatherService
+import br.com.fatcatdevstudio.weatherapp.ui.viewmodel.WeatherViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.result_weather_search.*
@@ -25,7 +29,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity() {
+class WeatherActivity : AppCompatActivity() {
 
   var cityWeather: String? = null
   var iconWeather: String? = null
@@ -35,6 +39,10 @@ class MainActivity : AppCompatActivity() {
   var humidity: Int? = null
   var feelsLike: Double? = null
   var windSpeed: Double? = null
+
+  private val weatherViewModel by lazy {
+    ViewModelProvider(this).get(WeatherViewModel::class.java)
+  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
