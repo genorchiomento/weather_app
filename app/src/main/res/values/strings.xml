@@ -7,4 +7,5 @@
   <string name="text_feels_like">%1.0fºC</string>
   <string name="text_speed_wind">%1.0fm/s</string>
   <string name="content_description_icon_weather_time">Icon weather time</string>
+  <string name="message_error_search">Ops, aconteceu algo errado!</string>
 </resources>
