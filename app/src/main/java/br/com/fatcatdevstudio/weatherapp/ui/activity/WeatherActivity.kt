@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.fatcatdevstudio.weatherapp.R
 import br.com.fatcatdevstudio.weatherapp.Utils.Companion.hideSoftKeyBoard
-import br.com.fatcatdevstudio.weatherapp.repository.api.InitializeRetrofit
+import br.com.fatcatdevstudio.weatherapp.repository.ApiRepository
 import br.com.fatcatdevstudio.weatherapp.ui.viewmodel.WeatherViewModel
 import br.com.fatcatdevstudio.weatherapp.ui.viewmodel.factory.WeatherViewModelFactory
 import com.squareup.picasso.Picasso
@@ -16,8 +16,8 @@ import kotlinx.android.synthetic.main.result_weather_search.*
 class WeatherActivity : AppCompatActivity() {
 
   private val weatherViewModel by lazy {
-    val retrofit = InitializeRetrofit()
-    val factory = WeatherViewModelFactory(retrofit)
+    val repository: ApiRepository = ApiRepository()
+    val factory = WeatherViewModelFactory(repository)
     ViewModelProvider(this, factory).get(WeatherViewModel::class.java)
   }
 
