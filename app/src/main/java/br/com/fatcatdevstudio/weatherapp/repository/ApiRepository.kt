@@ -14,15 +14,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ApiRepository(
+class ApiRepository {
   private val retrofit: InitializeRetrofit = InitializeRetrofit()
-) {
   private val liveData = MutableLiveData<OpenWeatherResponse>()
 
   fun getWeather(context: Context, citySearch: EditText): LiveData<OpenWeatherResponse> {
 
     val cityConverted = citySearch.text.toString()
-
     val apiService = retrofit.apiService()
     val call = apiService.getCurrentWeatherByCity(cityConverted, Constants.API_KEY)
 

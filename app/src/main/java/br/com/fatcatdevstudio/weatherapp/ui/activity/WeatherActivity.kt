@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.result_weather_search.*
 class WeatherActivity : AppCompatActivity() {
 
   private val weatherViewModel by lazy {
-    val repository: ApiRepository = ApiRepository()
+    val repository = ApiRepository()
     val factory = WeatherViewModelFactory(repository)
     ViewModelProvider(this, factory).get(WeatherViewModel::class.java)
   }
