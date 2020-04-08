@@ -10,7 +10,7 @@ import br.com.fatcatdevstudio.weatherapp.repository.ApiRepository
 import br.com.fatcatdevstudio.weatherapp.ui.viewmodel.WeatherViewModel
 import br.com.fatcatdevstudio.weatherapp.ui.viewmodel.factory.WeatherViewModelFactory
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_weather.*
 import kotlinx.android.synthetic.main.result_weather_search.*
 
 class WeatherActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class WeatherActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+    setContentView(R.layout.activity_weather)
 
     btnSearch.setOnClickListener {
       observeLiveData()
@@ -58,7 +58,7 @@ class WeatherActivity : AppCompatActivity() {
           feelsLikeResponseTextView.text = getString(R.string.text_feels_like, feelsLike)
           windSpeedResponseTextView.text = getString(R.string.text_speed_wind, windSpeed)
 
-          editTextCityInput.text.clear()
+          editTextCityInput.text?.clear()
         }
       )
   }
